@@ -16,13 +16,13 @@ namespace Marsen.Utility.Core.Log
         /// </summary>
         /// <param name="message">Log訊息</param>
         /// <returns></returns>
-        public bool Log(string message);
+        bool Log(string message);
         /// <summary>
         /// 記錄Log至指定路徑
         /// </summary>
         /// <param name="message">Log訊息</param>
         /// <param name="savePath">Log存檔路徑</param>
         /// <returns></returns>
-        public bool Log(string message,string savePath);
+        bool Log(string message,string savePath);
     }
 }
