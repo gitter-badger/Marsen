@@ -16,9 +16,10 @@ namespace Marsen.Utility.Core.Log
 
                 result = true;
             }
-            catch (Exception)
-            {                
-                throw;
+            catch
+            {
+                //TODO: Handle the exception
+                result = false;
             }
             
             return result;
