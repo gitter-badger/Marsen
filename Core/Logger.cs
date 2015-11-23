@@ -5,20 +5,30 @@ namespace Marsen.Utility.Core.Log
 {
     public class Logger :ILog
     {    
-        private string logPath = System.Environment.CurrentDirectory;
+        private string logPath = System.Environment.CurrentDirectory + "\\log";
         public bool Log(string message)
         {
             var result = false ;
             try
             {
-                DirectoryInfo dirInfo = new DirectoryInfo(logPath);
-                File.AppendAllLines(logPath, new string[] { message });
+                if (Directory.Exists(logPath) == false)
+                {
+                    Directory.CreateDirectory(logPath);
+                }
+                var filePath = string.Format("{0}\\{1}",logPath,DateTime.Now.ToString("yyyyMMddHH"));
+                
+                if (File.Exists(filePath) == false)
+                {
+                    File.Create(filePath);                    
+                }
+                File.AppendAllLines(filePath, new string[] { string.Format("[{0}] - {1}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), message) });
 
                 result = true;
             }
-            catch (Exception)
-            {                
-                throw;
+            catch
+            {
+                
+                result = false;
             }
             
             return result;
