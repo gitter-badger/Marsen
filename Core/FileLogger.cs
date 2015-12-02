@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Marsen.Utility.Core.Log
 {
-    public class Logger :ILog
+    public class FileLogger : ILog
     {    
         private string logPath = System.Environment.CurrentDirectory + "\\log";
         public bool Log(string message)
