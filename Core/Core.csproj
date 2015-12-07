@@ -39,8 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ILog.cs" />
-    <Compile Include="FileLogger.cs" />
+    <Compile Include="Log\ILog.cs" />
+    <Compile Include="Log\FileLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

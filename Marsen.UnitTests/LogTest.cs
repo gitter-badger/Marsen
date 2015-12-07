@@ -1,6 +1,6 @@
 ﻿using System;
+using Core.Log;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Marsen.Utility.Core.Log;
 
 namespace Marsen.UnitTests
 {

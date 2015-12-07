@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Marsen.Utility.Core.Log
+namespace Core.Log
 {
     public class FileLogger : ILog
     {    
