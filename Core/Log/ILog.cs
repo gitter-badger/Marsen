@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Marsen.Utility.Core.Log
+﻿namespace Core.Log
 {
     /// <summary>
     /// Log介面
