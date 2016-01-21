@@ -7,7 +7,7 @@ using System.Net.Http;
 
 namespace Core.Request
 {
-    class BaseRequest:IRequest
+    public class BaseRequest:IRequest
     {
         private string requestUri;
         private string requesetMethod;
@@ -29,7 +29,7 @@ namespace Core.Request
                 var form = new FormUrlEncodedContent(requesetData);
 
                 var response = await client.PostAsync(requestUri, form);
-                                //will throw an exception if not successful
+                //will throw an exception if not successful
                 response.EnsureSuccessStatusCode();
                 string content = await response.Content.ReadAsStringAsync();
                 return content;
@@ -40,7 +40,12 @@ namespace Core.Request
         {
             using (var client = new HttpClient())
             {
-                var response = await client.GetAsync(requestUri);
+                var q = string.Empty;
+                foreach (var data in requesetData)
+                {
+                    q += data.Key + "=" + data.Value;
+                }
+                var response = await client.GetAsync(requestUri+q);
 
                 //will throw an exception if not successful
                 response.EnsureSuccessStatusCode();

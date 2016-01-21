@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Request
 {
-    interface IRequest
+    public interface IRequest
     {
         //TODO 完成註解
 
