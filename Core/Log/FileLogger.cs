@@ -36,7 +36,10 @@ namespace Core.Log
 
         public bool Log(string message, string savePath)
         {
- 	        throw new NotImplementedException();
+            bool result = false;
+            logPath = string.Format("{0}", savePath);
+            result = Log(message);
+            return result;
         }
     }
 }

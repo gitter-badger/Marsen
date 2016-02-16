@@ -9,10 +9,17 @@ namespace Marsen.UnitTests
     {
         private ILog logTester;
         [TestMethod]
-        public void TestMethod1()
+        public void TestLog()
         {
             logTester = new FileLogger();
             logTester.Log("test");
+        }
+
+        [TestMethod]
+        public void TestLogWithPath()
+        {
+            logTester = new FileLogger();
+            logTester.Log("test",@"C:\");
         }
     }
 }
