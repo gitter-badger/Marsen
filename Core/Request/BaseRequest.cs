@@ -10,7 +10,7 @@ namespace Core.Request
     public class BaseRequest:IRequest
     {
         private string requestUri;
-        private string requesetMethod;
+        private string requesetMethod = "POST";
         private Dictionary<string, string> requesetData;
         private int requesetTimeout = 30;
 
