@@ -13,16 +13,16 @@ namespace Marsen.UnitTests
         public void TestPost()
         {
             var data  = new Dictionary<string, string>();
-
-            reqTester = new BaseRequest("http://www.google.com", data);
+            //// Bing 僅是為了測用的URI，可以替換為其它的URI
+            reqTester = new BaseRequest("http://www.bing.com/", data);
             var resonpse = reqTester.Load();
         }
         [TestMethod]
         public void TestGet()
         {
             var data = new Dictionary<string, string>();
-
-            reqTester = new BaseRequest("http://www.google.com", data,"GET");
+            //// Bing 僅是為了測用的URI，可以替換為其它的URI
+            reqTester = new BaseRequest("http://www.bing.com/", data, "GET");
             var resonpse = reqTester.Load();
         }
     }
