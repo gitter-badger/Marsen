@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 
-namespace Core.Request
+namespace Marsen.Core.Request
 {
     public class BaseRequest:IRequest
     {
@@ -22,7 +22,7 @@ namespace Core.Request
             requesetTimeout = timeout;
         }
 
-        private async Task<string> PostAsync() 
+        internal virtual async Task<string> PostAsync() 
         {
             using (var client = new HttpClient())
             {
@@ -36,7 +36,7 @@ namespace Core.Request
             }
         }
 
-        private async Task<string> GetAsync()
+        internal virtual async Task<string> GetAsync()
         {
             using (var client = new HttpClient())
             {

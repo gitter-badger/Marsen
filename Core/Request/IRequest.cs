@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Request
+namespace Marsen.Core.Request
 {
     public interface IRequest
     {

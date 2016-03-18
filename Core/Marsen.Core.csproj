@@ -7,8 +7,8 @@
     <ProjectGuid>{B165E4D8-E497-46DD-8AD1-3D03EC468501}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Core</RootNamespace>
-    <AssemblyName>Core</AssemblyName>
+    <RootNamespace>Marsen.Core</RootNamespace>
+    <AssemblyName>Marsen.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
