@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 
-namespace Core.Request
+namespace Marsen.Core.Request
 {
     public class BaseRequest:IRequest
     {

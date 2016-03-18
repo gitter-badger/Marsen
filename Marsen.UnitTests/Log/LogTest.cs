@@ -2,7 +2,7 @@
 using Core.Log;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Marsen.Tests.Log
+namespace Marsen.Core.Tests
 {
     [TestClass]
     public class LogTest

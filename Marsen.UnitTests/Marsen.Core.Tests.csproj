@@ -6,8 +6,8 @@
     <ProjectGuid>{EA457F80-E63C-4665-9C33-DC0B48E505EC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Marsen.UnitTests</RootNamespace>
-    <AssemblyName>Marsen.UnitTests</AssemblyName>
+    <RootNamespace>Marsen.Core.Tests</RootNamespace>
+    <AssemblyName>Marsen.Core.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -59,9 +59,9 @@
     <Compile Include="Request\RequestTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
+    <ProjectReference Include="..\Core\Marsen.Core.csproj">
       <Project>{b165e4d8-e497-46dd-8ad1-3d03ec468501}</Project>
-      <Name>Core</Name>
+      <Name>Marsen.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

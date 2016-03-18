@@ -1,9 +1,11 @@
 ﻿using System;
-using Core.Request;
+using Marsen.Core.Request;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using NSubstitute;
 
-namespace Marsen.Tests.Request
+namespace Marsen.Core.Tests
 {
     [TestClass]
     public class RequestTest
@@ -12,7 +14,7 @@ namespace Marsen.Tests.Request
         [TestMethod]
         public void TestPost()
         {
-            var data  = new Dictionary<string, string>();
+            var data = new Dictionary<string, string>();
             //// Bing 僅是為了測用的URI，可以替換為其它的URI
             reqTester = new BaseRequest("http://www.bing.com/", data);
             var resonpse = reqTester.Load();
