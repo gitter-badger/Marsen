@@ -3,7 +3,7 @@ using Core.Request;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace Marsen.UnitTests
+namespace Marsen.Tests.Request
 {
     [TestClass]
     public class RequestTest

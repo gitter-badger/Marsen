@@ -2,13 +2,14 @@
 using Core.Log;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Marsen.UnitTests
+namespace Marsen.Tests.Log
 {
     [TestClass]
     public class LogTest
     {
         private ILog logTester;
         [TestMethod]
+
         public void TestLog()
         {
             logTester = new FileLogger();
