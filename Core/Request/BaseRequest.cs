@@ -14,12 +14,21 @@ namespace Marsen.Core.Request
         private Dictionary<string, string> requesetData;
         private int requesetTimeout = 30;
 
-        public BaseRequest(string uri, Dictionary<string, string> data, string method = "POST", int timeout = 30)
+        public BaseRequest() {
+
+        }
+
+        private BaseRequest(string uri, Dictionary<string, string> data, string method = "POST", int timeout = 30)
         {
             requestUri = uri;
             requesetData = data;
             requesetMethod = method;
             requesetTimeout = timeout;
+        }
+
+        public static IRequest CreateRequest(string uri, Dictionary<string, string> data, string method = "POST", int timeout = 30)
+        {
+            return new BaseRequest(uri, data, method, timeout);
         }
 
         internal virtual async Task<string> PostAsync() 

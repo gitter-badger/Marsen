@@ -57,6 +57,7 @@
     <Compile Include="Log\LogTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\RequestTest.cs" />
+    <Compile Include="Request\RequsetFactory.cs" />
     <Compile Include="Request\StubRequest.cs" />
   </ItemGroup>
   <ItemGroup>

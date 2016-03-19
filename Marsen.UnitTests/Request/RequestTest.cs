@@ -13,7 +13,7 @@ namespace Marsen.Core.Tests.Request
             ////arrage
             string uri = "http://mockapi.marsen";
             var data = new Dictionary<string, string>();
-            StubRequest target = Substitute.For<StubRequest>(uri, data, "POST", 30);
+            StubRequest target = Substitute.For<StubRequest>();
             ////act
             target.Load();
             ////assert
@@ -27,7 +27,7 @@ namespace Marsen.Core.Tests.Request
             ////arrage
             string uri = "http://mockapi.marsen";
             var data = new Dictionary<string, string>();
-            StubRequest target = Substitute.For<StubRequest>(uri, data, "GET", 30);
+            StubRequest target = Substitute.For<StubRequest>();
             ////act
             target.Load();
             ////assert
