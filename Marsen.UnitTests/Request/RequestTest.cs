@@ -12,7 +12,7 @@ namespace Marsen.Core.Tests.Request
         {
             ////arrage
             var data = new Dictionary<string, string>();
-            StubRequest target = Substitute.For<StubRequest>();
+            StubBaseRequest target = Substitute.For<StubBaseRequest>();
             ////act
             target.Load();
             ////assert
@@ -26,7 +26,7 @@ namespace Marsen.Core.Tests.Request
         {
             ////arrage
             var data = new Dictionary<string, string>();
-            StubRequest target = Substitute.For<StubRequest>();
+            StubBaseRequest target = Substitute.For<StubBaseRequest>();
             ////act
             target.Load();
             ////assert

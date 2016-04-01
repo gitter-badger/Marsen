@@ -4,7 +4,7 @@ using Marsen.Core.Request;
 
 namespace Marsen.Core.Tests.Request
 {
-    public class StubRequest : BaseRequest
+    public class StubBaseRequest : BaseRequest
     {
 
         #pragma warning disable CS1998 // Async 方法缺乏 'await' 運算子，將同步執行
