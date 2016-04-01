@@ -45,6 +45,7 @@
     <Compile Include="Notify\INotify.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
+    <Compile Include="Notify\SlackNotify.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\IRequest.cs" />
     <Compile Include="Request\BaseRequest.cs" />
