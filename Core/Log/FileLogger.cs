@@ -1,45 +1,50 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 
 namespace Core.Log
 {
     public class FileLogger : ILog
     {    
-        private string logPath = System.Environment.CurrentDirectory + "\\log";
-        public bool Log(string message)
-        {
-            var result = false ;
-            try
-            {
-                if (Directory.Exists(logPath) == false)
-                {
-                    Directory.CreateDirectory(logPath);
-                }
-                var filePath = string.Format("{0}\\{1}",logPath,DateTime.Now.ToString("yyyyMMddHH"));
-                
-                if (File.Exists(filePath) == false)
-                {
-                    File.Create(filePath);                    
-                }
-                File.AppendAllLines(filePath, new string[] { string.Format("[{0}] - {1}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), message) });
+        private string logPath;
+        private string filePath;
 
-                result = true;
-            }
-            catch
-            {
-                
-                result = false;
-            }
-            
-            return result;
+        public void Log(string message)
+        {
+            DateTime now = GetNow();
+            var logMessage = string.Format("[{0}] - {1}", now.ToString("yyyy-MM-dd HH:mm:ss"), message);
+            filePath = string.Format("{0}\\{1}", logPath, now.ToString("yyyyMMddHH"));
+            CheckPath(logPath);
+            Write(logMessage);
         }
 
-        public bool Log(string message, string savePath)
+        protected virtual DateTime GetNow()
         {
-            bool result = false;
+            return DateTime.Now;
+        }
+
+
+        public void Log(string message, string savePath)
+        {
             logPath = string.Format("{0}", savePath);
-            result = Log(message);
-            return result;
+            Log(message);
+        }
+
+        private void CheckPath(string logPath)
+        {
+            if (Directory.Exists(logPath) == false)
+            {
+                Directory.CreateDirectory(logPath);
+            }
+        }
+
+        private void Write(string message)
+        {
+            using (StreamWriter sw = File.AppendText(filePath))
+            {
+                sw.WriteLine(message);
+                sw.Flush();
+            }
         }
     }
 }
