@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Marsen.Core.Request;
 
-namespace Marsen.Core.Tests.Request
+namespace Marsen.Core.Request
 {
     public class RequsetFactory
     {
