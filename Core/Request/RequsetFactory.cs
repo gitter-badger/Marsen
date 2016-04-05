@@ -9,7 +9,7 @@ namespace Marsen.Core.Request
 {
     public class RequsetFactory
     {
-        public IRequest GetRequest(string uri, Dictionary<string, string> data, string method = "POST", int timeout = 30)
+        public static IRequest GetRequest(string uri, Dictionary<string, string> data, string method = "POST", int timeout = 30)
         {
             //// if some logical
             return BaseRequest.CreateRequest(uri, data, method, timeout);

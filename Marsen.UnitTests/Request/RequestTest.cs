@@ -8,6 +8,7 @@ namespace Marsen.Core.Tests.Request
     public class RequestTest
     {
         [TestMethod]
+        [TestCategory("Unit Test")]
         public void 呼叫Request_Load後執行方法為Post的Request()
         {
             ////arrage
@@ -22,6 +23,7 @@ namespace Marsen.Core.Tests.Request
         }
 
         [TestMethod]
+        [TestCategory("Unit Test")]
         public void 呼叫Request_Load後執行方法為Get的Request()
         {
             ////arrage
