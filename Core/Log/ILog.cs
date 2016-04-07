@@ -9,7 +9,6 @@
         /// 記錄Log
         /// </summary>
         /// <param name="message">Log訊息</param>
-        /// <returns></returns>
         void Log(string message);
     }
 }
