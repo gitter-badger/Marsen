@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Marsen.Core.Request
+﻿namespace Marsen.Core.Request
 {
+    /// <summary>
+    /// IRequest
+    /// </summary>
     public interface IRequest
     {
-        //TODO 完成註解
-
+        /// <summary>
+        /// Load
+        /// </summary>
+        /// <returns>string</returns>
         string Load();
     }
 }

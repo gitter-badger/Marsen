@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Marsen.Core.Request;
 
 namespace Marsen.Core.Notify
@@ -12,35 +8,54 @@ namespace Marsen.Core.Notify
     /// </summary>
     public class SlackNotify : INotify
     {
-        private IRequest _request;
-        private Dictionary<string,string> _postData = new Dictionary<string, string>();
-        private const string _api = "https://slack.com/api/chat.postMessage";
-
-        public SlackNotify(IRequest request)
-        {
-            _request = request;
-        }
-
-
-        public INotify CreateNotify(string token,string channel,string username)
-        {
- 
-            _postData.Add("token", token);
-            _postData.Add("channel", "#" + channel);
-            _postData.Add("username", username);            
-            _request = RequsetFactory.GetRequest(_api,_postData);
-            return new SlackNotify(_request);
-        }
-
+        /// <summary>
+        /// slack api
+        /// </summary>
+        private const string API = "https://slack.com/api/chat.postMessage";
 
         /// <summary>
-        /// Send
+        /// Request
+        /// </summary>
+        private IRequest request;
+
+        /// <summary>
+        /// postData
+        /// </summary>
+        private Dictionary<string, string> postData = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Initializes a new instance of the SlackNotify class.
+        /// </summary>
+        /// <param name="request">request</param>
+        public SlackNotify(IRequest request)
+        {
+            this.request = request;
+        }
+
+        /// <summary>
+        /// CreateNotify
+        /// </summary>
+        /// <param name="token">slack token</param>
+        /// <param name="channel">channel</param>
+        /// <param name="username">username</param>
+        /// <returns>INotify Object</returns>
+        public INotify CreateNotify(string token, string channel, string username)
+        {
+            this.postData.Add("token", token);
+            this.postData.Add("channel", "#" + channel);
+            this.postData.Add("username", username);
+            this.request = RequsetFactory.GetRequest(API, this.postData);
+            return new SlackNotify(this.request);
+        }
+
+        /// <summary>
+        /// Send Messages to Notify
         /// </summary>
         /// <param name="text">text</param>
         public void Send(string text)
         {
-            _postData.Add("text", text);
-            _request.Load();
+            this.postData.Add("text", text);
+            this.request.Load();
         }
     }
 }
